@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head> <!-- タイトル -->
+<head> <!-- サイトのタイトル -->
   <meta charset="UTF-8">
   <title>すたー★こねくと</title>
   <meta name="description" content="嶋根いすずのホームページ「すたー★こねくと」">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <!-- OGP設定 -->
+  <meta property="og:title" content="すたー★こねくと">
+  <meta property="og:description" content="嶋根いすずのホームページ「すたー★こねくと」">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://isuzu-shimane.github.io/isuzusatell1te/">
+  <meta property="og:image" content="https://isuzu-shimane.github.io/isuzusatell1te/images/net_sora.webp">
+  <meta name="twitter:card" content="summary_large_image">
 
 <style>
 .site-title {
   color: #0000ff;
 }
 </style>
-
-<!-- OGP -->
-  <meta property="og:title" content="すたー★こねくと">
-  <meta property="og:description" content="嶋根いすずのホームページ「すたー★こねくと」">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://isuzu-shimane.github.io/isuzusatell1te/">
-  <meta property="og:image" content="https://isuzu-shimane.github.io/isuzusatell1te/images/net_sora.jpg">
-<!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="すたー★りんく">
-  <meta name="twitter:description" content="嶋根いすずのホームページ「すたー★こねくと」">
-  <meta name="twitter:image" content="https://isuzu-shimane.github.io/isuzusatell1te/images/net_sora.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="toppage.css">
 </head>
 
-<link rel="stylesheet" href="style.css">
-
 <body>
-  <header class="site-header"> <!-- トップメッセージ -->
+  <div class="top-banner"> <!-- 装飾用トップバナーと更新日時 -->
+    <span class="last-updated">最終通信日：2026.01.15</span>
+  </div>
+
+
+<div class="container"> <!-- ここから横並びにさせたいブロック（もしサイドメニューを作る場合） -->
+
+  <nav class="side-menu"> <!-- 左側ブロック（もしサイドメニューを作る場合） -->
+  </nav> <!-- ここまで左側ブロック -->
+
+<div class="main-content"> <!-- 中央ブロック -->
+  <header class="site-header"> <!-- タイトル -->
    <h1 class="site-title">すたー★こねくと</h1>
    <p class="site-subtitle">～Welcome to my digital garden～</p>
+  </header>
 
+<main> <!-- メインコンテンツここから -->
    <p class="top-message">ようこそ！<br>
     ここは すたー★こねくと。<br>
-    ネットの宙に瞬くちいさな衛星です。</p>
+    ネットの空に瞬くちいさな衛星です。</p>
 
-  <p>この衛星は
+  <p class="top-message">この衛星は
   <img src="http://www5.kannet.ne.jp/~counter/count.cgi?name=shimacochan01&type=16&width=5">
   回の信号を受け取りました。<br>
   ありがとう★
   </p>
 
-
   <p class="top-message">通信状態：<span id="status-text"></span>
   </p>
-
    <script> <!-- ランダムメッセージ -->
   const now = new Date();
   const hour = now.getHours();
@@ -96,50 +105,93 @@
   const message = messages[Math.floor(Math.random() * messages.length)];
   document.getElementById("status-text").textContent = message;
    </script>
+  
 
-  </header>
+   <nav class="top-nav"> <!-- トップナビ -->
+  <ul class="nav-links">
+    <li class="bracket">[</li>
+    <li><a href="goannnai.html">ごあんない</a></li>
+    <li class="separator">|</li>
+    <li><a href="">プロフィール</a></li>
+    <li class="separator">|</li>
+    <li><a href="">衛星からのお手紙</a></li>
+    <li class="bracket">]</li>
+  </ul>
+   </nav>
 
 
 
- <nav class="main-nav">
+<section class="menu-container-box"> <!-- メインメニューの全体の箱 -->
+  <h2 class="main-nav-title">メインメニュー</h2>
+
+  <nav class="main-nav-flex"> <!-- メインメニューのリンク集 -->
+    <div class="menu-block">
     <ul>
-      <li><a href="index.html">トップページ</a></li>
-      <li><a href="koujityu.html">ごあんない</a></li>
+      <li><a href="goannnai.html">ごあんない</a></li>
+       <span class="menu-desc">安全な航行のために、まずはじめにご一読ください。</span>
       <li><a href="koujityu.html">プロフィール</a></li>
-      <li><a href="koujityu.html">ブログ</a></li>
-      <li><a href="koujityu.html">月刊嶋根</a></li>
-      <li><a href="koujityu.html">ギャラリー</a></li>
+       <span class="menu-desc"></span>
+      <li><a href="koujityu.html">衛星からのお手紙</a></li>
+       <span class="menu-desc">衛星が観測した記録をみなさんにお届けいたします。</span>
+      <li><a href="gekkanshimane.html">月刊嶋根</a></li>
+       <span class="menu-desc">手書き新聞「月刊嶋根」のアーカイブが閲覧できます。</span>
+      <li><a href="gallery.html">ギャラリー</a></li>
+       <span class="menu-desc">公式イラストとファンアートを展示しています。（FA随時募集中！）</span>
     </ul>
-  </nav>
+    </div>
 
-  <section class="sns-links">
-      <ul>
-        <li><a href="https://x.com/isuzu_shimane" target="_blank">Twitter（X）</a></li>
-        <li><a href="https://www.youtube.com/@isuzu_shimane" target="_blank">YouTube</a></li>
-        <li><a href="https://twitcasting.tv/isuzu_shimane/star" target="_blank">ふぁん★くらぶ</a></li>
-        <li><a href="https://twitcasting.tv/isuzu_shimane" target="_blank">ツイキャス</a></li>
-        <li><a href="https://note.com/isuzu_shimane" target="_blank">note</a></li>
-        <li><a href="https://ameblo.jp/isuzu-shimane/" target="_blank">Amebaブログ</a></li>
-      </ul>
-    </section>
+    <div class="menu-block">
+    <ul>
+      <li><a href="https://www.youtube.com/@isuzu_shimane" target="_blank">YouTube</a></li>
+       <span class="menu-desc">いろんな動画を投稿します。嶋根のお庭にぜひ遊びにきてください！</span>
+      <li><a href="https://x.com/isuzu_shimane" target="_blank">Twitter（X）</a></li>
+       <span class="menu-desc">つぶやきます。最新情報を取得したい方はこちらをチェック。</span>
+      <li><a href="https://www.instagram.com/isuzu_shimane/" target="_blank">Instagram</a></li>
+       <span class="menu-desc">写真をまとめて投稿しています。</span>
+      <li><a href="https://note.com/isuzu_shimane" target="_blank">note</a></li>
+       <span class="menu-desc">月に何度か日記を投稿しています。</span>
+      <li><a href="https://twitcasting.tv/isuzu_shimane/star" target="_blank">メンバーシップ</a></li>
+       <span class="menu-desc">嶋根いすずのメンバーシップです。毎月の限定動画や、写真とつぶやきを投稿しています。</span>
+    </ul>
+    </div>
 
-</main>
-  <section class="news">
-      <h3>お知らせ</h3>
-      <ul>
-        <li>現在お知らせはありません。</li>
-      </ul>
-  </section>
+    <div class="menu-block">
+    <ul>
+      <li><a href="https://marshmallow-qa.com/5buxdm781ffqkz6?t=5r34GS&utm_medium=url_text&utm_source=promotion" target="_blank">マシュマロ</a></li>
+       <span class="menu-desc"></span>
+      <li><a href="https://suzuri.jp/isuzu_shimane" target="_blank">嶋根流通センター Suzuri支店</a></li>
+       <span class="menu-desc"></span>
+      <li><a href="https://store.line.me/stickershop/product/28704411/ja" target="_blank">LINEスタンプ</a></li>
+       <span class="menu-desc"></span>
+    </ul>
+    </div>
+  </nav> <!-- メインメニューのリンク集ここまで -->
+</section> <!-- メインメニューの全体の箱ここまで -->
 
-  <section class="log">
-      <h3>通信記録</h3>
-      <ul>
-        <li>2026.01.15 衛星を打ち上げました！</li>
-        <li>2026.01.14 サイト名を「すたー★りんく」から「すたー★こねくと」へ変更しました。</li>
-        <li>2026.01.13 サイトを作り始めました。</li>
-      </ul>
-  </section>
-</main>
+<section class="news-container-box"> <!-- お知らせの全体の箱 -->
+  <h2 class="news-title">お知らせ</h2>
+  <div class="news-content">
+    <ul>
+      <li>現在お知らせはありません。</li>
+    </ul>
+  </div>
+</section> <!-- お知らせの全体の箱ここまで -->
+
+<section class="log-container-box"> <!-- 通信記録の全体の箱 -->
+  <h2 class="log-title">通信記録</h2>
+  <div class="log-content">
+    <ul>
+      <li>2026.01.15 衛星を打ち上げました！</li>
+      <li>2026.01.14 サイト名を「すたー★りんく」から「すたー★こねくと」へ変更しました。</li>
+      <li>2026.01.13 サイトを作り始めました。</li>
+    </ul>
+  </div>
+</section> <!-- 通信記録の全体の箱ここまで -->
+</main> <!-- メインコンテンツここまで -->
+
+</div> <!-- ここまで中央ブロック -->
+</div> <!-- ここまで横並びにさせたいブロック -->
+
 
 <footer class="site-footer">
   <p>© 2026 すたー★こねくと</p>
